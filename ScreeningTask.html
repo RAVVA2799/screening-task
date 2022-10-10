@@ -1,0 +1,94 @@
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Screen Task</title>
+</head>
+<style>
+   body{
+
+background-image: linear-gradient(red,yellow,orange,rgb(120, 202, 221),green);
+   }
+
+.calculate{
+   width:600px;
+   height:250px;
+   background-color:wheat;
+   margin-left: 33%;
+   margin-top: 10%;
+   border-radius: 30px;
+   border-color: black;
+   border-style:dashed;
+   
+}
+
+
+h1{
+   text-align: center;
+}
+.btn1{
+   background-color:rgb(80, 196, 80);
+   
+}
+.btn2{
+   background-color: rgb(248, 54, 54);
+}
+.btn3{
+   background-color: yellow;
+}
+button{
+   margin-left: 80px;
+   width:90px;
+   height:30px;
+   border-color: black;
+   border-width: 4px;
+   border-radius: 15px;
+   margin-top: 30px;
+   
+}
+button:hover{
+   background-color: aqua;
+   box-shadow: 20px;
+}
+
+</style>
+<body>
+   
+   <div class="calculate">
+      <br>
+      <h1 class="head"> Hello World <span id="count"></span></h1>
+      
+
+      <div class="btn">
+          <button onclick="increment()" class="btn1"><b>Start</b></button>
+          <button onclick="tostop()" class="btn2"><b>Stop</b></button>
+          <button onclick="reset()" class="btn3"><b>Reset</b></button>
+      </div>
+  </div>
+<script>
+
+let forCountDisplay=document.getElementById("count")
+let count=0;
+
+
+function increment(){ 
+    
+  counterFunction= setInterval( function Counter(){
+    count=count+1;
+    forCountDisplay.innerHTML=` Count : ${count}`;
+    } ,1000)
+}
+
+function tostop(){
+    clearInterval(counterFunction);
+}
+
+function reset(){
+    clearInterval(counterFunction);
+    count=count*0;
+    forCountDisplay.innerHTML=''; 
+}
+</script>
+</body>
+</html>
